@@ -1,13 +1,26 @@
 import os
+import fitz as fr
 
 logfile = "log_test.txt"
 log = open(logfile, "w")
-root_path = "C:\Test_Folder"
+root_path = "F:\Programming\Test_Folder"
 
 def log_txt():
     os.chdir(root_path)
     log    
 
+def check_pdf_corruption():
+    try:
+        f = open(j, "r")
+        font_check = fr.CheckFont
+    except:
+        print("Error File: " +j)
+        os.chdir(root_path)
+        list_of_files.append(j)
+        log = open("log_test.txt","a")
+        log.write(i + "\t")
+        log.write(j + "\n")
+        log.close()
 
 list_of_dir = []
 
@@ -28,16 +41,22 @@ for i in list_of_dir:
         #Creates a list of the files names and append them to an array
         for j in os.listdir():
             try:
-                with open(j, "a+"):
-                    j.close()
-            except OSError:
+                f = open(j, "r")
+                font_check = fr.get_text_length
+                print(font_check)
+                f.close()
+            except:
+                print("Error File: " +j)
                 os.chdir(root_path)
                 list_of_files.append(j)
-                with open("log_test.txt", "a+"):
-                    log.append(j + "\n")
-                    log.close()
+                log = open("log_test.txt","a")
+                log.write(i + "\t")
+                log.write(j + "\n")
+                log.close()
     except NotADirectoryError:
         continue
           
     print(list_of_files)
-    os.chdir("../")
+    #os.chdir("../")
+    os.chdir(root_path)
+    print(os.getcwd())
