@@ -4,6 +4,7 @@ import pandas as pd
 from pandas import Series,DataFrame
 
 # Collection of Arrays but with Columns and Names
+print("Array with columns and names: ")
 data = {"States": ("Florida", "Georgia", "Alabama", "Arkansas"),
         "Capital": ("Tahallasee", "Atlanta", "Montegomery", "Little Rock"),
         "Population": (2.5, 2, 1, 0.5)}
@@ -13,12 +14,15 @@ frame = pd.DataFrame(data)
 print(frame)
 
 # frame.head() Prints the first two rows of data 
+print("Printing with just first two rows of data: ")
 print(frame.head(2))
 
 # frame.tail() Prints the last two rows of data
+print("Printing with the last two rows of data: ")
 print(frame.tail(2))
 
 # The columns can be arranged to your desire
+print("Printing with columns arranged: ")
 frame1 = pd.DataFrame(data, columns=["Capital", "States", "Population"])
 print(frame1)
 
@@ -29,10 +33,12 @@ print(frame1["States"])
 print(frame.loc[[1,2]])
 
 # Adding a column
+print("Adding a frame")
 frame["T/F"] = frame["Population"] > 1.5
 print(frame)
 
 # Deleting a column
+print("Deleting a frame")
 del frame["T/F"]
 print(frame)
 
@@ -57,5 +63,5 @@ Another DataFrame 	                                The DataFrame’s indexes are
 NumPy MaskedArray 	                                Like the “2D ndarray” case except masked values are missing in the DataFrame result
 '''
 
-#To.numpy() returns the DataFrame without the columns and indexes
+#To.numpy() returns the DataFrame without the columns and indexes into a ndarray
 print(frame.to_numpy())

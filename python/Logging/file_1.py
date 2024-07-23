@@ -3,7 +3,7 @@ import pymupdf as pm
 
 logfile = "log_test.txt"
 log = open(logfile, "w")
-root_path = "F:\Programming\Test_Folder_CDR"
+root_path = "C:\Test_Folder"
 
 # Check for the number of pages within the document if
 # unable then it will create an exception error and add to log
